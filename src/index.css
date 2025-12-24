@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-xmas-red: #D42426;
+  --color-xmas-green: #2F5233;
+  --color-xmas-gold: #F1D570;
+  --color-xmas-dark: #0B1026;
+  
+  --animate-twinkle: twinkle 2s infinite ease-in-out;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(0.8); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at center, #1a2c4e 0%, #0B1026 100%);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+}
