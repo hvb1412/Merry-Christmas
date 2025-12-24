@@ -86,7 +86,7 @@ const IntroScene = ({ onFinish }) => {
             - scale-90: Nhỏ hơn trên mobile để không chiếm hết chỗ
             - translate-y: Căn chỉnh lại vị trí để nằm giữa Chữ và Ô nhập
         */}
-        <div className="scale-90 sm:scale-110 md:scale-125 -translate-y-16 sm:-translate-y-20 md:-translate-y-24"> 
+        <div className="scale-90 sm:scale-110 md:scale-125 -translate-y-16 sm:-translate-y-20 md:-translate-y-5"> 
           <LightweightTree />
         </div>
       </div>
