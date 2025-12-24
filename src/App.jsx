@@ -14,7 +14,6 @@ function App() {
   };
 
   return (
-    // Thêm class 'relative' để các thành phần con dùng absolute (như nút nhạc) định vị chuẩn
     <div className="font-sans bg-black h-screen w-screen overflow-hidden relative">
       
       {/* 1. Đặt Component Nhạc ở đây để nó luôn chạy ngầm, không bị ngắt khi đổi cảnh */}

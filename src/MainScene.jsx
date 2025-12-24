@@ -62,7 +62,6 @@ const MainScene = ({ receiverName }) => {
   ];
 
   return (
-    // SỬA: min-h-[100svh] để đảm bảo nội dung dài không bị cắt, cho phép cuộn nếu cần
     <div className="relative w-full min-h-[100svh] overflow-x-hidden flex items-center justify-center bg-black font-sans">
       {/* Background image */}
       <div
@@ -100,7 +99,6 @@ const MainScene = ({ receiverName }) => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            // SỬA: Responsive font-size từ text-4xl (mobile) lên text-8xl (PC)
             className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] font-[Dancing_Script,cursive]"
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-100 via-yellow-300 to-yellow-500">
@@ -118,7 +116,6 @@ const MainScene = ({ receiverName }) => {
                 <TypingText
                   text={line}
                   delayStart={1.5 + i * 2}
-                  // SỬA: Font chữ nhỏ hơn một chút trên mobile (text-base) để dễ đọc
                   className="text-base sm:text-xl md:text-2xl lg:text-3xl text-white font-medium leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
                 />
               </div>

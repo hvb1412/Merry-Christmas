@@ -36,7 +36,6 @@ const IntroScene = ({ onFinish }) => {
 
   return (
     <motion.div
-      // SỬA: Dùng h-[100svh] để fix lỗi thanh địa chỉ trên mobile che mất nút
       className="relative w-full h-[100svh] overflow-hidden bg-[#020617]"
       exit={{
         opacity: 0,
@@ -54,7 +53,6 @@ const IntroScene = ({ onFinish }) => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-blue-600/10 blur-[160px] rounded-full z-0 animate-pulse pointer-events-none" />
 
       {/* ===== CHỮ MERRY CHRISTMAS ===== */}
-      {/* SỬA: Điều chỉnh top để tránh tai thỏ (notch) trên điện thoại */}
       <div className="absolute top-12 sm:top-14 md:top-16 w-full flex justify-center z-50 select-none px-2">
         <div className="flex flex-wrap justify-center">
           {titleText.split("").map((char, i) => (
@@ -64,7 +62,6 @@ const IntroScene = ({ onFinish }) => {
               variants={letterAnim}
               initial="hidden"
               animate="visible"
-              // SỬA: Giảm size chữ trên mobile (text-3xl) để không bị tràn dòng
               className="
                 text-3xl sm:text-5xl md:text-6xl lg:text-8xl
                 font-black text-transparent bg-clip-text
@@ -82,17 +79,12 @@ const IntroScene = ({ onFinish }) => {
 
       {/* ===== CÂY THÔNG ===== */}
       <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-        {/* SỬA: 
-            - scale-90: Nhỏ hơn trên mobile để không chiếm hết chỗ
-            - translate-y: Căn chỉnh lại vị trí để nằm giữa Chữ và Ô nhập
-        */}
         <div className="scale-90 sm:scale-110 md:scale-125 -translate-y-16 sm:-translate-y-20 md:-translate-y-5"> 
           <LightweightTree />
         </div>
       </div>
 
       {/* ===== INPUT + BUTTON ===== */}
-      {/* SỬA: bottom-10 để cách đáy màn hình hợp lý hơn trên mobile */}
       <div className="absolute bottom-10 sm:bottom-14 md:bottom-20 w-full flex justify-center z-40 px-4">
         <AnimatePresence>
           {showInput && (
@@ -105,7 +97,6 @@ const IntroScene = ({ onFinish }) => {
               className="flex flex-col items-center gap-4 sm:gap-6 w-full"
             >
               {/* Input */}
-              {/* SỬA: w-full và max-w-md để co giãn theo màn hình nhưng không quá to trên PC */}
               <div className="relative group w-full max-w-[320px] sm:max-w-md">
                 <input
                   type="text"
