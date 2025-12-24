@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import SparklingTree from "./SparklingTree";
+import LightweightTree from "./LightweightTree.jsx"; 
 import ParticleBackground from "./ParticleBackground";
 
 const IntroScene = ({ onFinish }) => {
@@ -8,6 +8,7 @@ const IntroScene = ({ onFinish }) => {
   const [showInput, setShowInput] = useState(false);
 
   useEffect(() => {
+    // Hiện ô nhập sau 2 giây
     const timer = setTimeout(() => setShowInput(true), 2000);
     return () => clearTimeout(timer);
   }, []);
@@ -77,10 +78,13 @@ const IntroScene = ({ onFinish }) => {
         </div>
       </div>
 
-      {/* ===== CÂY THÔNG ===== */}
+      {/* ===== CÂY THÔNG (ĐÃ CHỈNH VỊ TRÍ CAO LÊN) ===== */}
       <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-        <div className="scale-90 md:scale-100">
-          <SparklingTree />
+        {/* -translate-y-24: Đẩy lên trên khoảng 96px
+            md:-translate-y-32: Đẩy lên cao hơn nữa trên màn hình lớn 
+        */}
+        <div className="scale-110 md:scale-125 -translate-y-24 md:-translate-y-10"> 
+          <LightweightTree />
         </div>
       </div>
 
@@ -117,8 +121,8 @@ const IntroScene = ({ onFinish }) => {
                     shadow-[0_0_40px_rgba(0,0,0,0.5)]
                   "
                 />
-
-                {/* Glow ring */}
+                
+                {/* Vòng sáng quanh input khi focus */}
                 <div
                   className="
                     absolute inset-0 rounded-full
